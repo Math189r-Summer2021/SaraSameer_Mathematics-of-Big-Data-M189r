@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\title {MATH189R Course Project Report \\
+\large Title: Cervical Cancer Risk Analysis Through ML Algorithms  }
+\author{Submitted by Sara Sameer }
+\date{ 27th July 2021}
+
+\begin{document}
+
+\maketitle
+\section*{Introduction}
+\smallskip
+Cervical cancer is a type of cancer that occurs in the cells of the cervix — the lower part of the uterus that connects to the vagina. Before the condition of cancer gets worsen, it is crucial to identify this problem and deal with its causes.Under-privileged areas, such as Pakistan, has lack of medical resources and expensive medical procedures. Most of the population is deprived of the screening test facility. Thus, I want to work on this project to present a productive approach towards testing the risk of cervical cancer among people.\\\\
+\smallskip
+In my project, I will analyse the likelihood of having cervical cancer by determining its predictors through Machine Learning algorithms like Gradient Boosting, Regression for prediction, Random Forest, Support Vector Machine etc. This problem is a classification problem by nature. I aim to implement an algorithm that provides most accurate output to cope with this deadly disease.
+
+\section*{Methodology}
+\subsection *{Data Pre-processing}
+The data is initially cleaned to remove unnecessary or duplicate features. Few features are dropped to make data-set more flexible and cost-function more convex.
+While analyzing each feature in detail, it was noted that biopsy is the most important feature regarding risk analysis of Cervical Cancer. A cervical biopsy is a procedure to remove tissue from the cervix to test for abnormal or precancerous conditions, or cervical cancer. The values of biopsy is given in binary form where 0 means no or low risk rate and 1 means high risk of the disease. The feature biopsy is dropped from 'X' matrix and added as 'Y' attribute to compare the predicted values obtained from classifiers. 20\% of the dataset is allocated for the testing purpose. 
+
+\subsection*{Machine Learning Algorithms}
+\paragraph*{Logistic Regression:}
+Logistic regression was not a good model for this problem. The dataset could not be fitted well hence the cost function was not concrete and convex.The cofficient( the measure of how well the predictor is) was not able to converge due to large dataset.
+\paragraph*{Support Vector Classifier:}
+SVC is the best classifier model for this problem. SVC tries to find the widest possible separating margin between the two classes, while Logistic Regression optimizes the log likelihood function, with probabilities modeled by the sigmoid function. SVC proves to be more accurate and precise for prediction analysis of this problem.
+\paragraph*{Random Forest}
+Random forest algorithm provides higher accuracy through cross validation. Random forest classifier will handle the missing values and maintain the accuracy of a large proportion of data. If there are more trees, it won't allow over-fitting trees in the model. 
+The accuracy of this algorithm proves to be accurate than logistic regression, but not as accurate as SVC.
+\paragraph*{Gradient Boosting Classifier}
+It often provides predictive accuracy that cannot be trumped. Lots of flexibility - can optimize on different loss functions and provides several hyper parameter tuning options that make the function fit very flexible.Its accuracy and precision was almost same as SVC. 
+
+\subsection*{Error Analysis through Confusion Matrix}
+\includegraphics[width=6cm, height=4cm]{Logistic.png}
+\includegraphics[width=6cm, height=4cm]{SVC.png}
+\includegraphics[width=6cm, height=4cm]{RandomForest.png}
+\includegraphics[width=6cm, height=4cm]{GradientBoosting.png}
+
+\section*{References}
+\subsection*{Dataset}
+\url{https://archive.ics.uci.edu/ml/datasets/Cervical+cancer+%28Risk+Factors%29 }
+\url{https://www.kaggle.com/loveall/cervical-cancer-risk-classification}
+\subsection*{GitHub}
+\url{https://github.com/sharmaroshan/Cervical-Cancer-Prediction}
+\url{https://github.com/lauramann/cervicalCancerAnalysis}
+\subsection*{Youtube}
+\url{https://www.youtube.com/watch?v=prWyZhcktn4    (Confusion Matrix Explanation)}
+\url{https://www.youtube.com/watch?v=7eh4d6sabA0        (Machine learning in python)}
+\subsection*{Kaggle}
+\url{https://www.kaggle.com/kiseokyang/cerv-canc-classification-w-multiple-classifiers/data#Import-libraries}
+\url{https://www.kaggle.com/ravaliraj/risk-classification-of-cervical-cancer}
+
+
+\end{document}
